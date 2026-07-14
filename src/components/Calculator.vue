@@ -28,12 +28,14 @@
       <button class="key" @click="inputDecimal">.</button>
     </div>
     <CurrencyConverter />
+    <WeatherWidget />
   </div>
 </template>
 
 <script setup>
 import { useCalculator } from '../composables/useCalculator.js'
 import CurrencyConverter from './CurrencyConverter.vue'
+import WeatherWidget from './WeatherWidget.vue'
 const {
   displayValue,
   inputDigit,
