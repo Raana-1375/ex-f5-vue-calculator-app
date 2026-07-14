@@ -1,37 +1,46 @@
 <template>
   <div class="calculator">
     <div class="calculator__display">
-      <span class="calculator__display-value">0</span>
+      <span class="calculator__display-value">{{ displayValue }}</span>
     </div>
 
     <div class="calculator__keypad">
-      <button class="key key--function">CE</button>
-      <button class="key key--operator">÷</button>
-      <button class="key key--operator">×</button>
-      <button class="key key--operator">−</button>
+      <button class="key key--function" @click="clear">CE</button>
+      <button class="key key--operator" @click="chooseOperator('÷')">÷</button>
+      <button class="key key--operator" @click="chooseOperator('×')">×</button>
+      <button class="key key--operator" @click="chooseOperator('−')">−</button>
 
-      <button class="key">7</button>
-      <button class="key">8</button>
-      <button class="key">9</button>
-      <button class="key key--operator">+</button>
+      <button class="key" @click="inputDigit('7')">7</button>
+      <button class="key" @click="inputDigit('8')">8</button>
+      <button class="key" @click="inputDigit('9')">9</button>
+      <button class="key key--operator" @click="chooseOperator('+')">+</button>
 
-      <button class="key">4</button>
-      <button class="key">5</button>
-      <button class="key">6</button>
-      <button class="key key--equals">=</button>
+      <button class="key" @click="inputDigit('4')">4</button>
+      <button class="key" @click="inputDigit('5')">5</button>
+      <button class="key" @click="inputDigit('6')">6</button>
+      <button class="key key--equals" @click="calculateResult">=</button>
 
-      <button class="key">1</button>
-      <button class="key">2</button>
-      <button class="key">3</button>
+      <button class="key" @click="inputDigit('1')">1</button>
+      <button class="key" @click="inputDigit('2')">2</button>
+      <button class="key" @click="inputDigit('3')">3</button>
 
-      <button class="key key--wide">0</button>
-      <button class="key">.</button>
+      <button class="key key--wide" @click="inputDigit('0')">0</button>
+      <button class="key" @click="inputDecimal">.</button>
     </div>
   </div>
 </template>
 
 <script setup>
-// Calculator logic will be added in the next step
+import { useCalculator } from '../composables/useCalculator.js'
+
+const {
+  displayValue,
+  inputDigit,
+  inputDecimal,
+  chooseOperator,
+  calculateResult,
+  clear,
+} = useCalculator()
 </script>
 
 <style scoped>
