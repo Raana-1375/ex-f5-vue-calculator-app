@@ -27,12 +27,13 @@
       <button class="key key--wide" @click="inputDigit('0')">0</button>
       <button class="key" @click="inputDecimal">.</button>
     </div>
+    <CurrencyConverter />
   </div>
 </template>
 
 <script setup>
 import { useCalculator } from '../composables/useCalculator.js'
-
+import CurrencyConverter from './CurrencyConverter.vue'
 const {
   displayValue,
   inputDigit,
