@@ -92,7 +92,7 @@ npm run build
 
 ## Live Demo
 
-🔗 [View live app on GitHub Pages](#) *(link will be added after deployment)*
+🔗 [View live app on GitHub Pages](https://raana-1375.github.io/ex-f5-vue-calculator-app/)
 
 ## Author
 
