@@ -1,4 +1,5 @@
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useMemoryStore } from '../stores/memoryStore.js'
 
 // Map of operations avoids long if/else chains
 const operations = {
@@ -12,6 +13,7 @@ const operations = {
 }
 
 export function useCalculator() {
+  const memoryStore = useMemoryStore()
   const displayValue = ref('0')
   const previousValue = ref(null)
   const pendingOperator = ref(null)
@@ -80,6 +82,7 @@ export function useCalculator() {
       previousValue.value = null
     }
   }
+  
 
   function clear() {
     displayValue.value = '0'
@@ -88,7 +91,19 @@ export function useCalculator() {
     errorMessage.value = null
     isResultShown.value = false
   }
+function memoryAdd() {
+    memoryStore.save(parseFloat(displayValue.value))
+  }
 
+  function memoryRecall() {
+    if (!memoryStore.hasValue) return
+    displayValue.value = String(memoryStore.recall())
+    isResultShown.value = false
+  }
+
+  function memoryClear() {
+    memoryStore.clearMemory()
+  }
   return {
     displayValue,
     errorMessage,
@@ -97,5 +112,9 @@ export function useCalculator() {
     chooseOperator,
     calculateResult,
     clear,
+    memoryAdd,
+    memoryRecall,
+    memoryClear,
+    hasMemory: computed(() => memoryStore.hasValue),
   }
 }
