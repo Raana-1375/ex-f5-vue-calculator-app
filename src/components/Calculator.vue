@@ -26,6 +26,9 @@
 
       <button class="key key--wide" @click="inputDigit('0')">0</button>
       <button class="key" @click="inputDecimal">.</button>
+      <button class="key key--memory" @click="memoryAdd">M+</button>
+      <button class="key key--memory" @click="memoryRecall">MR</button>
+      <button class="key key--memory" @click="memoryClear">MC</button>
     </div>
     <CurrencyConverter />
     <WeatherWidget />
@@ -43,6 +46,9 @@ const {
   chooseOperator,
   calculateResult,
   clear,
+  memoryAdd,
+  memoryRecall,
+  memoryClear,
 } = useCalculator()
 </script>
 
@@ -101,5 +107,10 @@ const {
 
 .key--wide {
   grid-column: span 2;
+}
+.key--memory {
+  background-color: #6c757d;
+  color: #ffffff;
+  font-size: 0.9rem;
 }
 </style>
