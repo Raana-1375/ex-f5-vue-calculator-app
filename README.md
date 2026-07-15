@@ -90,9 +90,10 @@ npx playwright test
 npm run build
 ```
 
-## Live Demo
+## Links
 
-🔗 [View live app on GitHub Pages](https://raana-1375.github.io/ex-f5-vue-calculator-app/)
+- 🔗 [GitHub Repository](https://github.com/Raana-1375/ex-f5-vue-calculator-app)
+- 🔗 [Live Demo on GitHub Pages](https://raana-1375.github.io/ex-f5-vue-calculator-app/)
 
 ## Author
 
