@@ -92,7 +92,7 @@ onMounted(loadRates)
   box-shadow:
     0 16px 32px rgba(0,0,0,.08),
     0 4px 12px rgba(0,0,0,.05);
-    ackground:#ffffff;
+    background:#ffffff;
     border-color:#b9d6f2;
 }
 
@@ -132,7 +132,6 @@ onMounted(loadRates)
 }
 
 .currency-converter__select{
-
     padding:12px 16px;
     border:1px solid #d9e2ec;
     border-radius:10px;
