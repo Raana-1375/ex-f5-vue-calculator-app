@@ -173,5 +173,13 @@ onMounted(loadRates)
   font-weight: 700;
   color: #40516f;
 }
+@media (max-width: 480px) {
+  .currency-converter__row {
+    flex-wrap: wrap;
+  }
+  .currency-converter__input {
+    min-width: 0;
+  }
+}
 
 </style>
