@@ -30,7 +30,7 @@ import Calculator from './components/Calculator.vue'
 
 .app-header h1 {
   margin: 0;
-  font-size: 2rem;
+  font-size: clamp(1.25rem, 5vw, 2rem);
   font-weight: 700;
   color: #243b53;
 }
