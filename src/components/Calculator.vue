@@ -1,4 +1,5 @@
 <template>
+  <div class="dashboard">
   <div class="calculator">
     <div class="calculator__display">
       <span class="calculator__display-value">{{ displayValue }}</span>
@@ -30,9 +31,12 @@
       <button class="key key--memory" @click="memoryRecall">MR</button>
       <button class="key key--memory" @click="memoryClear">MC</button>
     </div>
+  </div>
+    <div class="sidebar">
     <CurrencyConverter />
     <WeatherWidget />
   </div>
+</div>
 </template>
 
 <script setup>
@@ -53,64 +57,104 @@ const {
 </script>
 
 <style scoped>
-.calculator {
-  max-width: 360px;
-  margin: 0 auto;
-  padding: 1rem;
+.dashboard{
+    display:flex;
+    gap:32px;
+    max-width:1180px;
+    margin:0 auto;
 }
 
-.calculator__display {
-  background-color: #1e1e1e;
-  color: #ffffff;
-  text-align: right;
-  padding: 1rem;
-  border-radius: 8px;
-  font-size: 2rem;
-  margin-bottom: 0.75rem;
-  min-height: 3rem;
-  word-break: break-all;
+.calculator{
+    flex:0 0 470px;
 }
 
-.calculator__keypad {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
+.sidebar{
+    flex:1;
+    min-width:520px;
 }
 
-.key {
-  padding: 1rem;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 8px;
-  background-color: #f0f0f0;
-  cursor: pointer;
+.calculator__display{
+    background:linear-gradient(180deg,#292929,#111);
+    color:white;
+    font-size:2.2rem;
+    font-weight:300;
+    border-radius:18px;
+    padding:22px;
+    min-height:80px;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    margin-bottom:20px;
 }
 
-.key:active {
-  opacity: 0.7;
+.calculator__keypad{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
 }
 
-.key--operator {
-  background-color: #f7a94b;
-  color: #ffffff;
+.key{
+    height:64px;
+    border:none;
+    border-radius:16px;
+    font-size:1.25rem;
+    font-weight:500;
+    cursor:pointer;
+
+    background:#f5f7fa;
+
+    transition:
+        transform .18s,
+        box-shadow .18s,
+        background .18s;
+
+    box-shadow:0 3px 8px rgba(0,0,0,.05);
 }
 
-.key--function {
-  background-color: #d9534f;
-  color: #ffffff;
+.key:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(0,0,0,.10);
 }
 
-.key--equals {
-  background-color: #4caf50;
-  color: #ffffff;
+.key:active{
+    transform:scale(.97);
+}
+
+.key--operator{
+    background:#f7b046;
+    color:white;
+}
+
+.key--equals{
+    background:#41b64d;
+    color:white;
+}
+
+.key--function{
+    background:#ea5750;
+    color:white;
 }
 
 .key--wide {
   grid-column: span 2;
 }
 .key--memory {
-  background-color: #6c757d;
-  color: #ffffff;
+  background:#697785;
+    color:white;
   font-size: 0.9rem;
+}
+@media (max-width: 760px) {
+  .dashboard {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .calculator {
+    flex: none;
+    width: 100%;
+  }
+  .sidebar {
+    min-width: 0;
+    width: 100%;
+  }
 }
 </style>
