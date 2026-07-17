@@ -90,11 +90,11 @@ const {
 .calculator__keypad{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:12px;
+    gap:10px;
 }
 
 .key{
-    height:64px;
+    height:56px;
     border:none;
     border-radius:16px;
     font-size:1.25rem;
