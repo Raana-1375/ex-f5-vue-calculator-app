@@ -76,30 +76,18 @@ onMounted(loadRates)
 
 .currency-converter {
   width: 100%;
-  padding: 24px;
+  padding: 18px;
   background: #ffffff;
   border: 1px solid #edf1f6;
-  border-radius: 20px;
-  box-shadow:
-    0 10px 24px rgba(0,0,0,.06),
-    0 2px 8px rgba(0,0,0,.04);
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.05);
   box-sizing: border-box;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.currency-converter:hover{
-  transform: translateY(-2px);
-  box-shadow:
-    0 16px 32px rgba(0,0,0,.08),
-    0 4px 12px rgba(0,0,0,.05);
-    background:#ffffff;
-    border-color:#b9d6f2;
 }
 
 .currency-converter__title {
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: #27364b;
 }
