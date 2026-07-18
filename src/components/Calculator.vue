@@ -6,31 +6,44 @@
     </div>
 
     <div class="calculator__keypad">
-      <button class="key key--function" @click="clear">CE</button>
-      <button class="key key--operator" @click="chooseOperator('÷')">÷</button>
-      <button class="key key--operator" @click="chooseOperator('×')">×</button>
-      <button class="key key--operator" @click="chooseOperator('−')">−</button>
+  <div class="keypad__row">
+    <button class="key key--memory" @click="memoryAdd">M+</button>
+    <button class="key key--memory" @click="memoryRecall">MR</button>
+    <button class="key key--memory" @click="memoryClear">MC</button>
+    <button class="key key--operator" @click="chooseOperator('÷')">÷</button>
+  </div>
 
-      <button class="key" @click="inputDigit('7')">7</button>
-      <button class="key" @click="inputDigit('8')">8</button>
-      <button class="key" @click="inputDigit('9')">9</button>
-      <button class="key key--operator" @click="chooseOperator('+')">+</button>
+  <div class="keypad__row">
+    <button class="key" @click="inputDigit('7')">7</button>
+    <button class="key" @click="inputDigit('8')">8</button>
+    <button class="key" @click="inputDigit('9')">9</button>
+    <button class="key key--operator" @click="chooseOperator('×')">×</button>
+  </div>
 
-      <button class="key" @click="inputDigit('4')">4</button>
-      <button class="key" @click="inputDigit('5')">5</button>
-      <button class="key" @click="inputDigit('6')">6</button>
-      <button class="key key--equals" @click="calculateResult">=</button>
+  <div class="keypad__row">
+    <button class="key" @click="inputDigit('4')">4</button>
+    <button class="key" @click="inputDigit('5')">5</button>
+    <button class="key" @click="inputDigit('6')">6</button>
+    <button class="key key--operator" @click="chooseOperator('−')">−</button>
+  </div>
 
-      <button class="key" @click="inputDigit('1')">1</button>
-      <button class="key" @click="inputDigit('2')">2</button>
-      <button class="key" @click="inputDigit('3')">3</button>
+  <div class="keypad__row">
+    <button class="key" @click="inputDigit('1')">1</button>
+    <button class="key" @click="inputDigit('2')">2</button>
+    <button class="key" @click="inputDigit('3')">3</button>
+    <button class="key key--operator" @click="chooseOperator('+')">+</button>
+  </div>
 
-      <button class="key key--wide" @click="inputDigit('0')">0</button>
-      <button class="key" @click="inputDecimal">.</button>
-      <button class="key key--memory" @click="memoryAdd">M+</button>
-      <button class="key key--memory" @click="memoryRecall">MR</button>
-      <button class="key key--memory" @click="memoryClear">MC</button>
-    </div>
+  <div class="keypad__row">
+    <button class="key key--wide" @click="inputDigit('0')">0</button>
+    <button class="key" @click="inputDecimal">.</button>
+  </div>
+
+  <div class="keypad__row keypad__row--actions">
+    <button class="key key--function" @click="clear">CE</button>
+    <button class="key key--equals" @click="calculateResult">=</button>
+  </div>
+</div>
   </div>
     <div class="sidebar">
     <CurrencyConverter />
@@ -88,9 +101,19 @@ const {
 }
 
 .calculator__keypad{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.keypad__row{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:10px;
+}
+
+.keypad__row--actions{
+    grid-template-columns:repeat(2,1fr);
 }
 
 .key{
