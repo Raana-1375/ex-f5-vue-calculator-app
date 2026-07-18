@@ -33,7 +33,7 @@ jobs:
         run: npm run build
         env:
           VITE_CURRENCYFREAKS_API_KEY: ${{ secrets.VITE_CURRENCYFREAKS_API_KEY }}
-
+          VITE_CURRENCYFREAKS_API_BASE_URL: https://api.currencyfreaks.com/v2.0/rates/latest
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
