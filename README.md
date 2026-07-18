@@ -89,14 +89,14 @@ npx playwright test
 ```bash
 npm run build
 ```
-
+![Test results](docs/test-results.png)
 ## Links
 
 - 🔗 [GitHub Repository](https://github.com/Raana-1375/ex-f5-vue-calculator-app)
 - 🔗 [Live Demo on GitHub Pages](https://raana-1375.github.io/ex-f5-vue-calculator-app/)
 
 ## Author
-
+Raana
 Developed as part of the Full Stack Bootcamp (Vue 3 module).
 
 
