@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_BASE_URL = import.meta.env.VITE_CURRENCYFREAKS_API_BASE_URL || 'https://api.currencyfreaks.com/v2.0/rates/latest'
+const API_BASE_URL = import.meta.env.VITE_CURRENCYFREAKS_API_BASE_URL
 const API_KEY = import.meta.env.VITE_CURRENCYFREAKS_API_KEY
 
 /**
