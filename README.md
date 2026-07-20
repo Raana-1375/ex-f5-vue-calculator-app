@@ -95,6 +95,15 @@ npm run build
 - 🔗 [GitHub Repository](https://github.com/Raana-1375/ex-f5-vue-calculator-app)
 - 🔗 [Live Demo on GitHub Pages](https://raana-1375.github.io/ex-f5-vue-calculator-app/)
 
+## Architecture Notes
+
+Although this project doesn't use class-based inheritance, it follows a similar separation-of-concerns idea to MVC:
+
+- **Model (logic & data):** `composables/` (calculator logic), `services/` (API calls), `stores/` (Pinia memory state) — no UI code lives here.
+- **View (presentation):** `components/*.vue` — templates and styling only; they call into the model layer rather than containing business logic themselves.
+
+This keeps each piece focused on a single responsibility: a component can be restyled or rearranged (as done in this update) without touching calculation logic, API calls, or state — and vice versa.
+
 ## Author
 Raana
 Developed as part of the Full Stack Bootcamp (Vue 3 module).
